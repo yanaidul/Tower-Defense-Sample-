@@ -7,7 +7,6 @@ public class TowerGun : MonoBehaviour
     private ILauncher _launcher;
 
     [SerializeField] EnemyDetector _enemyDetector;
-    [SerializeField] string _enemyTag = "Enemy";
 
     [SerializeField] float _fireRefreshRate = 1f;
     private float _nextFireTime;

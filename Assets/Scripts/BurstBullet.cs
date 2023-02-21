@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BurstBullet : MonoBehaviour
 {
     [SerializeField] float _projectileSpeed;
     [SerializeField] int _projectileDamage;
@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag(_enemyTag))
+        if (collision.CompareTag(_enemyTag))
         {
             if (!collision.TryGetComponent(out _tempEnemyHealth)) return;
             _tempEnemyHealth.Damage(_projectileDamage);
@@ -44,6 +44,4 @@ public class Bullet : MonoBehaviour
         yield return new WaitForSeconds(selfDestructDuration);
         gameObject.SetActive(false);
     }
-
-
 }

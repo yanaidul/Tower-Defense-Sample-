@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Missile : MonoBehaviour
 {
     [SerializeField] float _projectileSpeed;
     [SerializeField] int _projectileDamage;
@@ -12,6 +12,11 @@ public class Bullet : MonoBehaviour
 
     private GameObject _target;
 
+    [Header("Explosion Related Components")]
+    [SerializeField] GameObject _explosionParticle;
+    [SerializeField] BoxCollider2D _boxCollider2D;
+    [SerializeField] float _timeUntilExplosionDissappear;
+    [SerializeField] float _boxColliderSizeAfterExplosion;
 
     private void Start()
     {
@@ -31,12 +36,23 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag(_enemyTag))
+        if (collision.CompareTag(_enemyTag))
         {
             if (!collision.TryGetComponent(out _tempEnemyHealth)) return;
             _tempEnemyHealth.Damage(_projectileDamage);
-            gameObject.SetActive(false);
+            StartCoroutine(OnExplosion(_timeUntilExplosionDissappear));
+            
         }
+    }
+
+    IEnumerator OnExplosion(float _timeUntilExplosionDissappear)
+    {
+        _explosionParticle.gameObject.SetActive(true);
+        _boxCollider2D.size = new Vector2(_boxColliderSizeAfterExplosion, _boxColliderSizeAfterExplosion);
+        yield return new WaitForSeconds(_timeUntilExplosionDissappear);
+        _explosionParticle.gameObject.SetActive(false);
+        _boxCollider2D.size = new Vector2(1, 1);
+        gameObject.SetActive(false);
     }
 
     IEnumerator OnSelfDestruct(float selfDestructDuration)
@@ -44,6 +60,4 @@ public class Bullet : MonoBehaviour
         yield return new WaitForSeconds(selfDestructDuration);
         gameObject.SetActive(false);
     }
-
-
 }

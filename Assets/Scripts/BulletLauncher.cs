@@ -18,7 +18,9 @@ public class BulletLauncher : MonoBehaviour,ILauncher
             _tempBullet.SetEnemyTarget(_enemyDetector.FirstEnemy);
 
             bullet.transform.position = gameObject.transform.position;
-            bullet.transform.rotation = gameObject.transform.rotation;
+            Vector3 targetRotation = _enemyDetector.FirstEnemy.transform.position - bullet.transform.position;
+            float angle = Vector3.SignedAngle(bullet.transform.up, targetRotation, bullet.transform.forward);
+            bullet.transform.Rotate(0, 0, angle);
             bullet.SetActive(true);
         }
 

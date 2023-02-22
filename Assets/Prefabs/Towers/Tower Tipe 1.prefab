@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: 1398459715786802076}
   - component: {fileID: 1398459715786802087}
   - component: {fileID: 1398459715786802086}
-  - component: {fileID: 107383468290751556}
-  - component: {fileID: -7128220978226621294}
   m_Layer: 0
   m_Name: Tower Tipe 1
   m_TagString: Untagged
@@ -164,33 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyDetector: {fileID: 1398459715786802075}
   _fireRefreshRate: 0.8
---- !u!114 &107383468290751556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398459715786802077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 239b85b2eed39394d8e1279c7bc35d5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectsToPool:
-  - {fileID: 4106335355318989061, guid: b22205904b427664ab64dea23ef3f59e, type: 3}
-  amountToPool: 5
---- !u!114 &-7128220978226621294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398459715786802077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9198e2eb09f30644b7a9218bf89b38f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1398459716037309361
 GameObject:
   m_ObjectHideFlags: 0

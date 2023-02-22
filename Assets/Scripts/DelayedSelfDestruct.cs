@@ -5,7 +5,7 @@ using UnityEngine;
 public class DelayedSelfDestruct : MonoBehaviour
 {
     [SerializeField] float _selfDestructDuration = 2.5f;
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(OnSelfDestruct(_selfDestructDuration));
     }

@@ -32,7 +32,7 @@ public class TowerGun : MonoBehaviour
     private void FireWeapon()
     {
         _nextFireTime = Time.time + _fireRefreshRate;
-        _launcher.Launch(this);
+        _launcher.Launch();
     }
 
 

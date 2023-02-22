@@ -11,14 +11,7 @@ public class Missile : MonoBehaviour
     private HealthElement _tempEnemyHealth;
     private GameObject _target;
 
-    [Header("Explosion Related Components")]
-    [SerializeField] GameObject _explosionParticle;
-    [SerializeField] BoxCollider2D _boxCollider2D;
-    [SerializeField] float _timeUntilExplosionDissappear;
-    [SerializeField] float _boxColliderSizeAfterExplosion;
-
-
-
+    [SerializeField] Explosion _explosion;
     private void Update()
     {
         if (_target == null) return;
@@ -36,18 +29,9 @@ public class Missile : MonoBehaviour
         {
             if (!collision.TryGetComponent(out _tempEnemyHealth)) return;
             _tempEnemyHealth.Damage(_projectileDamage);
-            StartCoroutine(OnExplosion(_timeUntilExplosionDissappear));
-            
+            _explosion.Explode();
         }
     }
 
-    IEnumerator OnExplosion(float _timeUntilExplosionDissappear)
-    {
-        _explosionParticle.gameObject.SetActive(true);
-        _boxCollider2D.size = new Vector2(_boxColliderSizeAfterExplosion, _boxColliderSizeAfterExplosion);
-        yield return new WaitForSeconds(_timeUntilExplosionDissappear);
-        _explosionParticle.gameObject.SetActive(false);
-        _boxCollider2D.size = new Vector2(1, 1);
-        gameObject.SetActive(false);
-    }
+    
 }

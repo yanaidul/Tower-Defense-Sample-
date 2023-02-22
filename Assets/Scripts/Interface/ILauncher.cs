@@ -1,4 +1,4 @@
 public interface ILauncher
 {
-    void Launch(TowerGun towerGun);
+    void Launch();
 }

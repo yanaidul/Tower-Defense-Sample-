@@ -4825,6 +4825,7 @@ GameObject:
   - component: {fileID: 8814981186068225522}
   - component: {fileID: 5423372568685654349}
   - component: {fileID: 5297871283782491041}
+  - component: {fileID: 3880627589901079613}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -4915,11 +4916,7 @@ MonoBehaviour:
   _projectileSpeed: 10
   _projectileDamage: 30
   _enemyTag: Enemy
-  _selfDestructDuration: 2
-  _explosionParticle: {fileID: 4479000127722981825}
-  _boxCollider2D: {fileID: 5423372568685654349}
-  _timeUntilExplosionDissappear: 0.2
-  _boxColliderSizeAfterExplosion: 17
+  _explosion: {fileID: 3880627589901079613}
 --- !u!61 &5423372568685654349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4958,3 +4955,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a829f8de9e02af4eb7a3177964e02ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selfDestructDuration: 1.5
+--- !u!114 &3880627589901079613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965565136358413305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5da8d82d786a041804e3db75991bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionParticle: {fileID: 4479000127722981825}
+  _boxCollider2D: {fileID: 5423372568685654349}
+  _timeUntilExplosionDissappear: 0.2
+  _boxColliderSizeAfterExplosion: 17

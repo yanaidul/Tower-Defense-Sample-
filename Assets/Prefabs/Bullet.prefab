@@ -102,7 +102,6 @@ MonoBehaviour:
   _projectileSpeed: 10
   _projectileDamage: 40
   _enemyTag: Enemy
-  _selfDestructDuration: 2
 --- !u!61 &-8083108800318123087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,3 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a829f8de9e02af4eb7a3177964e02ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selfDestructDuration: 1.5

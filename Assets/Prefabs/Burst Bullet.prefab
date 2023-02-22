@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7689083205744279428}
   - component: {fileID: 4961130146424174603}
   - component: {fileID: 1173324844459214731}
-  - component: {fileID: 8758023206917158452}
+  - component: {fileID: 1966200452622227334}
+  - component: {fileID: -2440726324865551888}
   m_Layer: 0
   m_Name: Burst Bullet
   m_TagString: Untagged
@@ -102,7 +103,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8758023206917158452
+--- !u!114 &1966200452622227334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,10 +112,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 7123451167873154879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf82067d09ec1347b4b1b8bba8ede98, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a829f8de9e02af4eb7a3177964e02ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfDestructDuration: 2.5
+--- !u!114 &-2440726324865551888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123451167873154879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7008ead04c6c3e242babfcbf478bfe3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpeed: 10
-  _projectileDamage: 20
+  _projectileDamage: 40
   _enemyTag: Enemy
-  _selfDestructDuration: 2

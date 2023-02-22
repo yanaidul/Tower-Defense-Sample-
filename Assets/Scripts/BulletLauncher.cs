@@ -11,17 +11,21 @@ public class BulletLauncher : MonoBehaviour,ILauncher
     public void Launch(TowerGun towerGun)
     {
         if (!_enemyDetector.IsEnemyWithinRange) return;
-        GameObject bullet = BulletObjectPool.SharedInstance.GetPooledObject();
-        if (bullet != null)
+        if (TryGetComponent(out GameObjectPool gameObjectInPool))
         {
-            if (!bullet.TryGetComponent(out _tempBullet)) return;
-            _tempBullet.SetEnemyTarget(_enemyDetector.FirstEnemy);
+            GameObject pooledGameObject = gameObjectInPool.GetPooledObject();
 
-            bullet.transform.position = gameObject.transform.position;
-            Vector3 targetRotation = _enemyDetector.FirstEnemy.transform.position - bullet.transform.position;
-            float angle = Vector3.SignedAngle(bullet.transform.up, targetRotation, bullet.transform.forward);
-            bullet.transform.Rotate(0, 0, angle);
-            bullet.SetActive(true);
+            if (pooledGameObject != null)
+            {
+                if (!pooledGameObject.TryGetComponent(out _tempBullet)) return;
+                _tempBullet.SetEnemyTarget(_enemyDetector.FirstEnemy);
+
+                pooledGameObject.transform.position = gameObject.transform.position;
+                Vector3 targetRotation = _enemyDetector.FirstEnemy.transform.position - pooledGameObject.transform.position;
+                float angle = Vector3.SignedAngle(pooledGameObject.transform.up, targetRotation, pooledGameObject.transform.forward);
+                pooledGameObject.transform.Rotate(0, 0, angle);
+                pooledGameObject.SetActive(true);
+            }
         }
 
     }

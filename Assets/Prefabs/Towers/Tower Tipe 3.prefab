@@ -14,15 +14,15 @@ GameObject:
   - component: {fileID: 5637833780909376294}
   - component: {fileID: 5637833780909376290}
   - component: {fileID: 5637833780909376280}
-  - component: {fileID: 5637833780909376288}
   - component: {fileID: 5637833780909376289}
+  - component: {fileID: 6835300553926924900}
   m_Layer: 0
   m_Name: Tower Tipe 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5637833780909376295
 Transform:
   m_ObjectHideFlags: 0
@@ -150,22 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyDetector: {fileID: 5637833780909376293}
   _fireRefreshRate: 0.8
---- !u!114 &5637833780909376288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5637833780909376291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 132cc9a655814d44c9cb201296905b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObjects: []
-  objectsToPool:
-  - {fileID: 7123451167873154879, guid: 44a2e4c9312585c42a2aeb652163c93c, type: 3}
-  amountToPool: 100
 --- !u!114 &5637833780909376289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +163,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyDetector: {fileID: 5637833780909376293}
+--- !u!114 &6835300553926924900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5637833780909376291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239b85b2eed39394d8e1279c7bc35d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPool:
+  - {fileID: 7123451167873154879, guid: 44a2e4c9312585c42a2aeb652163c93c, type: 3}
+  amountToPool: 100
 --- !u!1 &5637833780996567823
 GameObject:
   m_ObjectHideFlags: 0

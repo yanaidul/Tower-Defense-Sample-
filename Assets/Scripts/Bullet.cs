@@ -7,16 +7,9 @@ public class Bullet : MonoBehaviour
     [SerializeField] float _projectileSpeed;
     [SerializeField] int _projectileDamage;
     [SerializeField] string _enemyTag = "Enemy";
-    [SerializeField] float _selfDestructDuration = 2.5f;
-    private EnemyHealth _tempEnemyHealth;
+    private HealthElement _tempEnemyHealth;
 
     private GameObject _target;
-
-
-    private void Start()
-    {
-        StartCoroutine(OnSelfDestruct(_selfDestructDuration));
-    }
 
     private void Update()
     {
@@ -37,12 +30,6 @@ public class Bullet : MonoBehaviour
             _tempEnemyHealth.Damage(_projectileDamage);
             gameObject.SetActive(false);
         }
-    }
-
-    IEnumerator OnSelfDestruct(float selfDestructDuration)
-    {
-        yield return new WaitForSeconds(selfDestructDuration);
-        gameObject.SetActive(false);
     }
 
 

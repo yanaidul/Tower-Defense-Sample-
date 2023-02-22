@@ -15,16 +15,20 @@ public class EnemySpawner : MonoBehaviour
     }
     private void SpawnEnemy()
     {
-        GameObject enemy = EnemyObjectPool.SharedInstance.GetPooledObject();
-        if (enemy != null)
+        if (TryGetComponent(out GameObjectPool gameObjectInPool))
         {
-            if (!enemy.TryGetComponent(out _tempEnemyMovement)) return;
-            _tempEnemyMovement.SetWayPoint(_startingWayPoint);
+            GameObject pooledGameObject = gameObjectInPool.GetPooledObject();
+            if (pooledGameObject != null)
+            {
+                if (!pooledGameObject.TryGetComponent(out _tempEnemyMovement)) return;
+                _tempEnemyMovement.SetWayPoint(_startingWayPoint);
 
-            enemy.transform.position = gameObject.transform.position;
-            enemy.transform.rotation = gameObject.transform.rotation;
-            enemy.SetActive(true);
+                pooledGameObject.transform.position = gameObject.transform.position;
+                pooledGameObject.transform.rotation = gameObject.transform.rotation;
+                pooledGameObject.SetActive(true);
+            }
         }
+        
     }
 
     IEnumerator SpawnEnemyOnDelay(float spawnDuration)

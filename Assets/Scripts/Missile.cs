@@ -7,9 +7,8 @@ public class Missile : MonoBehaviour
     [SerializeField] float _projectileSpeed;
     [SerializeField] int _projectileDamage;
     [SerializeField] string _enemyTag = "Enemy";
-    [SerializeField] float _selfDestructDuration = 2.5f;
-    private EnemyHealth _tempEnemyHealth;
-
+ 
+    private HealthElement _tempEnemyHealth;
     private GameObject _target;
 
     [Header("Explosion Related Components")]
@@ -18,10 +17,7 @@ public class Missile : MonoBehaviour
     [SerializeField] float _timeUntilExplosionDissappear;
     [SerializeField] float _boxColliderSizeAfterExplosion;
 
-    private void Start()
-    {
-        StartCoroutine(OnSelfDestruct(_selfDestructDuration));
-    }
+
 
     private void Update()
     {
@@ -52,12 +48,6 @@ public class Missile : MonoBehaviour
         yield return new WaitForSeconds(_timeUntilExplosionDissappear);
         _explosionParticle.gameObject.SetActive(false);
         _boxCollider2D.size = new Vector2(1, 1);
-        gameObject.SetActive(false);
-    }
-
-    IEnumerator OnSelfDestruct(float selfDestructDuration)
-    {
-        yield return new WaitForSeconds(selfDestructDuration);
         gameObject.SetActive(false);
     }
 }

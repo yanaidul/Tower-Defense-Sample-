@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4838478383239781349}
   - component: {fileID: 4838478383239781350}
-  - component: {fileID: 4838478383239781351}
   - component: {fileID: 4838478383239781344}
   - component: {fileID: 4838478383239781371}
   - component: {fileID: 4838478383239781348}
+  - component: {fileID: 5261846277803694584}
   m_Layer: 0
   m_Name: Enemy Tipe 3
   m_TagString: Enemy
@@ -88,19 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4838478383239781351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4838478383239781345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea72101a248ea54f8021ce68f9e3f66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 300
 --- !u!114 &4838478383239781344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +149,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5261846277803694584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838478383239781345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20e95a2a9ec6b94f86b4a43c82eec4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100

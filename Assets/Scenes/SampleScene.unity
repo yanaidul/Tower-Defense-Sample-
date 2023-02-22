@@ -615,8 +615,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1191933924}
   - component: {fileID: 1191933923}
-  - component: {fileID: 1191933925}
   - component: {fileID: 1191933926}
+  - component: {fileID: 1191933927}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -653,24 +653,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1191933925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191933922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c70b197245836f14ebc12a2ff4b2eab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObjects: []
-  objectsToPool:
-  - {fileID: 444643665006828, guid: e7f7e9af6806db14e92bbc50ede30d2b, type: 3}
-  - {fileID: 5112969815042975567, guid: a52b2c199457ab545a4fb38f209688bd, type: 3}
-  - {fileID: 4838478383239781345, guid: fe94adc40cad3a3489b2ab5d0867cab4, type: 3}
-  amountToPool: 20
 --- !u!114 &1191933926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +666,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextWayPoint: {fileID: 244545325}
+--- !u!114 &1191933927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191933922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239b85b2eed39394d8e1279c7bc35d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPool:
+  - {fileID: 444643665006828, guid: e7f7e9af6806db14e92bbc50ede30d2b, type: 3}
+  - {fileID: 5112969815042975567, guid: a52b2c199457ab545a4fb38f209688bd, type: 3}
+  - {fileID: 4838478383239781345, guid: fe94adc40cad3a3489b2ab5d0867cab4, type: 3}
+  amountToPool: 20
 --- !u!1 &1275837514
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,8 +694,8 @@ GameObject:
   - component: {fileID: 1275837517}
   - component: {fileID: 1275837516}
   - component: {fileID: 1275837515}
-  - component: {fileID: 1275837519}
   - component: {fileID: 1275837518}
+  - component: {fileID: 1275837519}
   m_Layer: 0
   m_Name: HomeBase
   m_TagString: Untagged
@@ -810,10 +809,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1275837514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c8f21c069fbf845889fa67ea34429b, type: 3}
+  m_Script: {fileID: 11500000, guid: c20e95a2a9ec6b94f86b4a43c82eec4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseHealth: 5
+  _health: 5
 --- !u!1 &1369204031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,11 +1168,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Tipe 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1398459715786802077, guid: e2855452735fc0c449270d2c229c45c2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7128220978226621294, guid: e2855452735fc0c449270d2c229c45c2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e2855452735fc0c449270d2c229c45c2, type: 3}
 --- !u!1001 &4499912995049602606
 PrefabInstance:
@@ -1230,10 +1226,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Tipe 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8076463775911369039, guid: 54b84c90e8a430e4b8cba9ac0fdd5d82, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54b84c90e8a430e4b8cba9ac0fdd5d82, type: 3}
 --- !u!1001 &4842387239148895895
@@ -1246,6 +1238,10 @@ PrefabInstance:
     - target: {fileID: 5637833780909376291, guid: d084b299e3203fe4b918143f6e2379bc, type: 3}
       propertyPath: m_Name
       value: Tower Tipe 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637833780909376291, guid: d084b299e3203fe4b918143f6e2379bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5637833780909376295, guid: d084b299e3203fe4b918143f6e2379bc, type: 3}
       propertyPath: m_RootOrder
